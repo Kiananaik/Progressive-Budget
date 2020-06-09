@@ -17,7 +17,7 @@ app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
 //  need to insert proper heroku deployment!!!
-  useUnifiedTopology: true,                   
+  // useUnifiedTopology: true,                   
   useNewUrlParser: true,
   useFindAndModify: false
 });
