@@ -14,8 +14,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static("public"));
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
+// process.env.MONGODB_URI || 
+mongoose.connect("mongodb://localhost/budget", {
 //  need to insert proper heroku deployment!!!
   // useUnifiedTopology: true,                   
   useNewUrlParser: true,
@@ -23,7 +23,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
 });
 
 // routes
-app.use(require("./routes/api.js"));
+app.use(require("./routes/api"));
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
