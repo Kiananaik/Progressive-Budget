@@ -14,8 +14,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static("public"));
-// process.env.MONGODB_URI || 
-mongoose.connect("mongodb://localhost/budget", {
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
 //  need to insert proper heroku deployment!!!
   // useUnifiedTopology: true,                   
   useNewUrlParser: true,
